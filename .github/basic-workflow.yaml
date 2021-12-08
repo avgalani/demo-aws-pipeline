@@ -1,3 +1,11 @@
+name: coolDemo
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 jobs:
   deploy:
     name: Upload to Amazon S3

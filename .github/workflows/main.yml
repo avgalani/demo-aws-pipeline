@@ -29,3 +29,4 @@ jobs:
         aws sts get-caller-identity
         aws s3api list-buckets
         env
+        aws sts get-session-token

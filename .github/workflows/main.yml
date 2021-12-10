@@ -27,4 +27,4 @@ jobs:
     - name: just get caller identity
       run: |
         aws sts get-caller-identity
-        aws s3 list-buckets
+        aws s3 ls

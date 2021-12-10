@@ -8,7 +8,7 @@ on:
     branches: [main]
 jobs:
   deploy:
-    name: Upload to Amazon S3
+    name: List all S3 buckets
     runs-on: ubuntu-latest
     # These permissions are needed to interact with GitHub's OIDC Token endpoint.
     permissions:
@@ -21,9 +21,10 @@ jobs:
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::461096968511:role/github-role2
+        role-to-assume: arn:aws:iam::459483145222:role/github-demo
         aws-region: eu-west-1
 
     - name: just get caller identity
       run: |
         aws sts get-caller-identity
+        aws s3 list-buckets
